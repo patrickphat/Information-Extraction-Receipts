@@ -10,7 +10,11 @@ Use module from `/helpers/FilePickling` to load pickled file, for example:
 
 ```python
 from helpers.FilePickling import pkl_load
-img_patches = pkl_load("patches.pkl")
+
+# This return a list of cropped image patches
+img_patches = pkl_load("patches.pkl") 
+
+# This return ground truth for each patches
 img_patches_labels = pkl_load("labels.pkl") 
 ```
 
