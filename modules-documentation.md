@@ -49,6 +49,10 @@ Move demo image inside folder text-detection-ctpn/data/demo, then run
 python ./main/demo.py
 ```
 
+Some results after running demo script
+
+<img src="/Layout/text-detection-ctpn/data/res/X51005757342.jpg" width=320 height=480 /><img src="/Layout/text-detection-ctpn/data/res/X51005764154.jpg" width=320 height=480 />
+
 
 # 2. OCR
 Download prepared pickled dataset at [here](https://drive.google.com/file/d/1-0bRc91c-50S38oC3JYE9BcWwogheiRg/view?usp=sharing)
