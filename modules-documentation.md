@@ -4,10 +4,6 @@ The documentation shows some small and useful modules that helps the progress of
 
 This module is inherited from the repository [here](https://github.com/eragonruan/text-detection-ctpn)
 
-Checkpoint training model(50k iter): [here]()
-
-Data for training: [here](https://drive.google.com/drive/folders/1OTl3BRs3iBCTLyCGMHno1VFxyxZzxs4Z?usp=sharing)
-
 a) Setup environment
 
 ```
