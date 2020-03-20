@@ -4,7 +4,7 @@ The documentation shows some small and useful modules that helps the progress of
 
 This module is inherited from the repository [here](https://github.com/eragonruan/text-detection-ctpn)
 
-a) Setup environment
+## a) Setup environment
 
 ```
 cd Layout/text-detection-ctpn/utils/bbox
@@ -14,7 +14,7 @@ chmod +x make.sh
 ./make.sh
 ```
 
-b) Training
+## b) Training
 
 Download pretrained VGG model and put it in data/vgg_16.ckpt link: [tensorflow/models](https://github.com/tensorflow/models/tree/1af55e018eebce03fb61bba9959a04672536107d/research/slim
 
@@ -36,7 +36,7 @@ and then train
 python ./main/train.py
 ```
 
-c) Demo
+## c) Demo
 
 If you want to see demo results on test data of SROIE, go to following link and download it [here](https://drive.google.com/drive/folders/1TYJDmql_ahQk_CyrfnpVnB_agZVcqTp3?usp=sharing), then put it under folder data inside Layout folder
 
