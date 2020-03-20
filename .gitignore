@@ -1,3 +1,5 @@
 Layout/data/
 Layout/format_data/
 debug.log
+Layout/text-detection-ctpn/checkpoints_mlt/
+Layout/text-detection-ctpn/data/dataset
