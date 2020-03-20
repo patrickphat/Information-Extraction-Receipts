@@ -40,7 +40,7 @@ c) Demo
 
 If you want to see demo results on test data of SROIE, go to following link and download it [here](https://drive.google.com/drive/folders/1TYJDmql_ahQk_CyrfnpVnB_agZVcqTp3?usp=sharing), then put it under folder data inside Layout folder
 
-Download pretrained model [here](https://drive.google.com/drive/folders/1k4bYCBJUlPzsFhEJGIv-5lk9tZQX3tvv?usp=sharing) and put all checkpoint record inside folder checkpoints_mlt
+Download pretrained model [here](https://drive.google.com/drive/folders/1k4bYCBJUlPzsFhEJGIv-5lk9tZQX3tvv?usp=sharing) and put all checkpoint record inside folder text-detection-ctpn/checkpoints_mlt
 
 
 Move demo image inside folder text-detection-ctpn/data/demo, then run
