@@ -58,6 +58,26 @@ Some results after running demo script
 - Download prepared dataset at [here](https://drive.google.com/file/d/1H8BWQz1z4Y93hqv3DdPI_qQi6dI0Mhs5/view?usp=sharing)
 - Unzip the file ```unzip data.zip```
 - Start training using CRNN module in `/crnn-ocr` by calling `python training.py`
+
+Folder structure:
+```
+└── data_train
+    ├── 00000.jpg
+    ├── 00001.jpg
+    ├── 00002.jpg
+    ├── ...
+    └── 34054.jpg
+└── data_test
+    ├── 00000.jpg
+    ├── 00001.jpg
+    ├── 00002.jpg
+    ├── ...
+    └── 34054.jpg
+└── labels_train.txt
+└── labels_test.txt
+```
+For `labels_train` and `labels_test`, each lines represent the labels for each image in `data_train` and `data_test` respectively.
+
 # 3. KV
 
 # 4. Explainer
