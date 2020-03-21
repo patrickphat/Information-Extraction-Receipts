@@ -55,22 +55,9 @@ Some results after running demo script
 
 
 # 2. OCR
-Download prepared pickled dataset at [here](https://drive.google.com/file/d/1-0bRc91c-50S38oC3JYE9BcWwogheiRg/view?usp=sharing)
-
-Also the pickled labels for the dataset at here [here](https://drive.google.com/file/d/1-5jkZ7YT23tCd1-P_5AvKmR3cTyQIJ4n/view?usp=sharing)
-
-Use module from `/helpers/FilePickling` to load pickled file, for example:
-
-```python
-from helpers.FilePickling import pkl_load
-
-# This return a list of cropped image patches
-img_patches = pkl_load("patches.pkl") 
-
-# This return ground truth for each patches
-img_patches_labels = pkl_load("labels.pkl") 
-```
-
+- Download prepared dataset at [here](https://drive.google.com/file/d/1H8BWQz1z4Y93hqv3DdPI_qQi6dI0Mhs5/view?usp=sharing)
+- Unzip the file ```unzip data.zip```
+- Start training using CRNN module in `/crnn-ocr` by calling `python training.py`
 # 3. KV
 
 # 4. Explainer
