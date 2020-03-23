@@ -56,7 +56,7 @@ Some results after running demo script
 
 # 2. OCR
 
-## Version 1
+## Data preparation
 
 - Download prepared dataset at [here](https://drive.google.com/file/d/1H8BWQz1z4Y93hqv3DdPI_qQi6dI0Mhs5/view?usp=sharing)
 - Unzip the file ```unzip data.zip```
@@ -81,7 +81,7 @@ Folder structure:
 ```
 For `labels_train` and `labels_test`, each lines represent the labels for each image in `data_train` and `data_test` respectively.
 
-## Version 2 (main version)
+## Training
 This module is inherited from the [repository](https://github.com/eragonruan/text-detection-ctpn)
 
 ### Install dependencies:
