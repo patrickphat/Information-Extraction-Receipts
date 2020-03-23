@@ -206,5 +206,18 @@ clr p.s a4/a3
 shah 51200 kuala lumpur
 ```
 # 3. KV
+## 3.1. Data Preparation
+Use the `coords_labels_loader` [here](https://github.com/patrickphatnguyen/Optical-Character-Recognition-KV/blob/master/helpers/coords_labels_loader.py) to load coords and text labels from `.txt` ground-truth file on SROIE19
+```python
+from helpers import coords_labels_loader
+coords_per_samples = []
+labels_per_samples = []
+
+for filename in tqdm_notebook(text_filename):
+  list_coords, list_labels = coords_labels_loader.load_from_file("task1/" + filename)
+  coords_per_samples.append(list_coords)
+  labels_per_samples.append(list_labels)
+```
+
 
 # 4. Explainer
