@@ -82,6 +82,8 @@ Folder structure:
 For `labels_train` and `labels_test`, each lines represent the labels for each image in `data_train` and `data_test` respectively.
 
 ## Version 2 (main version)
+This module is inherited from the [repository](https://github.com/eragonruan/text-detection-ctpn)
+
 ### Install dependencies:
 ```
 git clone https://github.com/patrickphatnguyen/Optical-Character-Recognition-KV.git
@@ -118,6 +120,53 @@ python train.py --adadelta --trainroot dataset/train --valroot dataset/val --cud
 + Before recognizing optical character, an image annotated by its text bounding box must be specified. Put bounding box txt file inside boundingbox/ and demo image in data_test
 
 + Download pretrained checkpoint with 100 epoch [here](https://drive.google.com/drive/folders/17KPbFetUaPWvcG0xJUNoDMXJC7WSeqAQ?usp=sharing) and put checkpoint file under expr/ folder
+
+Some example:
+
+
+#### Demo image: <img src="/crnn-ocr/version2/data_test/X51009568881.jpg" width=320 height=480 />
+#### Results:
+```
+thank you ! & please come egain !
+gst summary
+0.59
+rounding adjj
+0.00
+sr sr
+1.00 5.00 sr
+qty descipton n
+cds & noan gst tmara)
+0.00
+09 3w aumnuroo 5do 5sr
+59 tvoe 2 tota:
+goodsod arendu runabnl3 reundaretangu!
+10.40
+total inclusive gst:
+cashiey cash1-
+discount:
+10.400
+price total(rm :
+0.59
+m# : c2 - 0
+10.40
+56100 cheras, kuala lumpur.
+total
+5 pvc wallplug
+10.40
+9.81
+10.40
++603-9130 2672
+9.81
+gst raeg : 001125220352
+no 57, jalan kanis 7, taman segar,
+21/09/2017 10:2037am
+hon hwa hardware trading
+taxinvoice
+ccb#: 87870
+company reg.no. : 001055194x
+((50pcs)
+cash
+```
 
 
 
