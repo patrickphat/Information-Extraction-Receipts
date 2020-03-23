@@ -104,9 +104,9 @@ python setup.py install
 
 + Download dataset at put in under data_train and data_valid.
 
- - [data_train]:
+ - [data_train](https://drive.google.com/drive/folders/1--rbdb48OWxJi6m0blesTkJbSNm95Peb?usp=sharing)
  
- - [data_valid]:
+ - [data_valid](https://drive.google.com/drive/folders/16DyQmbTg4YwhczR26X1u8lFyKwaTFXvI?usp=sharing)
 + Run create_dataset.py(should run with python2 environment) to prepare dataset in lmdb format. Prepared dataset after running this script will be found at dataset/
 
 + Training
@@ -117,7 +117,7 @@ python train.py --adadelta --trainroot dataset/train --valroot dataset/val --cud
 
 + Before recognizing optical character, an image annotated by its text bounding box must be specified. Put bounding box txt file inside boundingbox/ and demo image in data_test
 
-+ Download pretrained checkpoint with 100 epoch [here]: and put checkpoint file under expr/ folder
++ Download pretrained checkpoint with 100 epoch [here](https://drive.google.com/drive/folders/17KPbFetUaPWvcG0xJUNoDMXJC7WSeqAQ?usp=sharing) and put checkpoint file under expr/ folder
 
 
 
