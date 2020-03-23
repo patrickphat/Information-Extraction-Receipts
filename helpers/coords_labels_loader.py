@@ -5,7 +5,7 @@ def findnth(string, substring, n):
     return len(string) - len(parts[-1]) - len(substring)
 
 
-def load_coords_labels(labels_path):
+def load_from_path(labels_path):
   list_coords = []
   list_labels = []
 
