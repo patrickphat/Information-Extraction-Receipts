@@ -219,5 +219,10 @@ for filename in tqdm_notebook(text_filename):
   labels_per_samples.append(list_labels)
 ```
 
+Get prepared data here
+
+## 3.2. Download prepared data
+
+
 
 # 4. Explainer
