@@ -55,6 +55,9 @@ Some results after running demo script
 
 
 # 2. OCR
+
+## Version 1
+
 - Download prepared dataset at [here](https://drive.google.com/file/d/1H8BWQz1z4Y93hqv3DdPI_qQi6dI0Mhs5/view?usp=sharing)
 - Unzip the file ```unzip data.zip```
 - Start training using CRNN module in `/crnn-ocr` by calling `python training.py`
@@ -77,6 +80,46 @@ Folder structure:
 └── labels_test.txt
 ```
 For `labels_train` and `labels_test`, each lines represent the labels for each image in `data_train` and `data_test` respectively.
+
+## Version 2 (main version)
+### Install dependencies:
+```
+git clone https://github.com/patrickphatnguyen/Optical-Character-Recognition-KV.git
+
+cd crnn-ocr/task2
+# installing torch and lmdb
+pip install torch
+pip install lmdb
+# setup warp-ctc
+git clone https://github.com/SeanNaren/warp-ctc.git
+cd warp-ctc
+mkdir build
+cd build
+cmake ..
+make
+cd pytorch_binding
+python setup.py install
+```
+### Training
+
++ Download dataset at put in under data_train and data_valid.
+
+ - [data_train]:
+ 
+ - [data_valid]:
++ Run create_dataset.py(should run with python2 environment) to prepare dataset in lmdb format. Prepared dataset after running this script will be found at dataset/
+
++ Training
+```
+python train.py --adadelta --trainroot dataset/train --valroot dataset/val --cuda
+```
+### Demo
+
++ Before recognizing optical character, an image annotated by its text bounding box must be specified. Put bounding box txt file inside boundingbox/ and demo image in data_test
+
++ Download pretrained checkpoint with 100 epoch [here]: and put checkpoint file under expr/ folder
+
+
 
 # 3. KV
 
