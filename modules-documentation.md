@@ -81,7 +81,7 @@ Folder structure:
 ```
 For `labels_train` and `labels_test`, each lines represent the labels for each image in `data_train` and `data_test` respectively.
 
-## Training
+## Modeling
 This module is inherited from the [repository](https://github.com/eragonruan/text-detection-ctpn)
 
 ### Install dependencies:
