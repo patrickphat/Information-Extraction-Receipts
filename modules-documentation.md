@@ -208,9 +208,10 @@ shah 51200 kuala lumpur
 # 3. KV
 ## 3.1. Data Preparation 
 
-**Load bbox coordinates and text lines in the bbox
+**Load bbox coordinates and text lines in the bbox **
 
 Use the `coords_labels_loader` [here](https://github.com/patrickphatnguyen/Optical-Character-Recognition-KV/blob/master/helpers/coords_labels_loader.py) to load coords and text labels from `.txt` ground-truth file on SROIE19
+
 ```python
 from helpers import coords_labels_loader
 coords_per_samples = []
@@ -222,7 +223,7 @@ for filename in text_filename:
   labels_per_samples.append(list_labels)
 ```
 
-** From coordinates create graph (adjacency matrix) 
+**From coordinates create graph (adjacency matrix)**
 The input is list of all coordinates for bbox. Each coord is a dictionary having 4 keys: `x_min`,`y_min`,`x_max` and `y_max`.
 
 ```python
