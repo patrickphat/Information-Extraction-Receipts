@@ -224,12 +224,21 @@ for filename in tqdm_notebook(text_filename):
 ## 3.2. Download and load prepared data
 Get prepared data here
 - [List of adjacency tensors](https://drive.google.com/file/d/1--E7mci8JFHBNRqVJWQY_5X9jwuIuET5/view?usp=sharing) Type: list. Shape m x [N_i,N_i,5]
-- [Node features](https://drive.google.com/file/d/1vUtUOTsoDb6P-gmVlMG7lOEx1j1crOHR/view?usp=sharing) Type: numpy array. Shape (m,Ni,784)
+- [Node features](https://drive.google.com/file/d/10aTONod0P8SEldh63MotAoSMwNPD-821/view?usp=sharing) Type: list. Shape mx[Ni,784]
 - [Node labels](https://drive.google.com/open?id=1-3Do0qpiR1oMVLE60dNEL0AdqFUewqy7) Type: list. shape mx[N_i]
 
 Notation:
 - m: number of datapoints
-- N_i: Number of nodes of sammple i
+- N_i: Number of nodes of i-th sample i
+
+```python
+# Module to load pkl file
+from helpers.FilePickling import pkl_load
+
+all_adjacency_tensors = pkl_load("all_adjacency_tensors.pkl")
+all_node_features = pkl_load("all_node_features.pkl")
+all_node_labels = pkl_load("all_node_labels.pkl")
+```
 
 
 # 4. Explainer
