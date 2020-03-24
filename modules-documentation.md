@@ -224,6 +224,7 @@ for filename in text_filename:
 ```
 
 **From coordinates create graph (adjacency matrix)**
+
 The input is list of all coordinates for bbox. Each coord is a dictionary having 4 keys: `x_min`,`y_min`,`x_max` and `y_max`.
 
 ```python
@@ -235,7 +236,15 @@ for coords in coords_per_sample):
   adjacency_tensors.append(adjacency_tensor)
 ```
 
+**Sentence feature extraction with pretrained RoBerta**
 
+```
+from sentence_transformers import SentenceTransformer
+model = SentenceTransformer('roberta-base-nli-stsb-mean-tokens')
+sentences_embeddings = model.encode(["Product Price",
+                                     "Cost",
+                                     "Money"])
+```
 
 
 ## 3.2. Download and load prepared data
