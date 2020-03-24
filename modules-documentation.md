@@ -207,17 +207,33 @@ shah 51200 kuala lumpur
 ```
 # 3. KV
 ## 3.1. Data Preparation 
+
+**Load bbox coordinates and text lines in the bbox
+
 Use the `coords_labels_loader` [here](https://github.com/patrickphatnguyen/Optical-Character-Recognition-KV/blob/master/helpers/coords_labels_loader.py) to load coords and text labels from `.txt` ground-truth file on SROIE19
 ```python
 from helpers import coords_labels_loader
 coords_per_samples = []
 labels_per_samples = []
 
-for filename in tqdm_notebook(text_filename):
+for filename in text_filename:
   list_coords, list_labels = coords_labels_loader.load_from_file("task1/" + filename)
   coords_per_samples.append(list_coords)
   labels_per_samples.append(list_labels)
 ```
+
+** From coordinates create graph (adjacency matrix) 
+The input is list of all coordinates for bbox. Each coord is a dictionary having 4 keys: `x_min`,`y_min`,`x_max` and `y_max`.
+
+```python
+from helpers import GraphBuilder
+
+adjacency_tensors = []
+for coords in coords_per_sample):
+  adjacency_tensor = build_graph_from_coords(coords)
+  adjacency_tensors.append(adjacency_tensor)
+```
+
 
 
 
