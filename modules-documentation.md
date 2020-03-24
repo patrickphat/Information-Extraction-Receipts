@@ -206,7 +206,7 @@ clr p.s a4/a3
 shah 51200 kuala lumpur
 ```
 # 3. KV
-## 3.1. Data Preparation
+## 3.1. Data Preparation 
 Use the `coords_labels_loader` [here](https://github.com/patrickphatnguyen/Optical-Character-Recognition-KV/blob/master/helpers/coords_labels_loader.py) to load coords and text labels from `.txt` ground-truth file on SROIE19
 ```python
 from helpers import coords_labels_loader
@@ -221,7 +221,7 @@ for filename in tqdm_notebook(text_filename):
 
 
 
-## 3.2. Download prepared data
+## 3.2. Download and load prepared data
 Get prepared data here
 - [List of adjacency tensors](https://drive.google.com/file/d/1--E7mci8JFHBNRqVJWQY_5X9jwuIuET5/view?usp=sharing) Type: list. Shape m x [N_i,N_i,5]
 - [Node features](https://drive.google.com/file/d/1vUtUOTsoDb6P-gmVlMG7lOEx1j1crOHR/view?usp=sharing) Type: numpy array. Shape (m,Ni,784)
