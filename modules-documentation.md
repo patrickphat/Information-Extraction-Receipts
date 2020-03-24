@@ -219,9 +219,17 @@ for filename in tqdm_notebook(text_filename):
   labels_per_samples.append(list_labels)
 ```
 
-Get prepared data here
+
 
 ## 3.2. Download prepared data
+Get prepared data here
+- [List of adjacency tensors](https://drive.google.com/file/d/1--E7mci8JFHBNRqVJWQY_5X9jwuIuET5/view?usp=sharing) Type:list. Shape m x [N_i,N_i,5]
+- [Node features matrix](https://drive.google.com/file/d/1vUtUOTsoDb6P-gmVlMG7lOEx1j1crOHR/view?usp=sharing) Type: numpy array. Shape (m,Ni,784)
+- [Node labels](https://drive.google.com/open?id=1-3Do0qpiR1oMVLE60dNEL0AdqFUewqy7) shape mx[N_i]
+
+Notation:
+- m: number of datapoints
+- N_i: Number of nodes of sammple i
 
 
 
