@@ -208,7 +208,7 @@ shah 51200 kuala lumpur
 # 3. KV
 ## 3.1. Data Preparation 
 
-**Load bbox coordinates and text lines in the bbox **
+**Load bbox coordinates and text lines in the bbox**
 
 Use the `coords_labels_loader` [here](https://github.com/patrickphatnguyen/Optical-Character-Recognition-KV/blob/master/helpers/coords_labels_loader.py) to load coords and text labels from `.txt` ground-truth file on SROIE19
 
