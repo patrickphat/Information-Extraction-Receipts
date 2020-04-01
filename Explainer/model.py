@@ -80,9 +80,14 @@ class Explainer(nn.Module):
         return mask, mask_bias
   
     def forward(self,node_idx):
+        
+        # Apply mask to adjacency tensor
         new_A = self.A*self.edge_mask + self.mask_bias
+        
+        # Forward with new masked adjacency tensors
         V = self.model.forward(new_A,self.V)
-        return V[0][node_idx]
+        
+        return V[0][node_idx] # return prediction of target node
   
     def loss(self,V_true,V_pred):
 
