@@ -266,7 +266,73 @@ all_node_features = pkl_load("all_node_features.pkl")
 all_node_labels = pkl_load("all_node_labels.pkl")
 ```
 
-## 3.3 Train and run demo
+## 3.3. Train
+```python
+epochs = 500
+
+for t in range(epochs):
+  train_losses = 0
+  #training
+  train_average_score = [] 
+  for batch_ndx, sample in enumerate(train_loader):
+    model.train()
+    A,V,Y = sample
+    # Forward pass: Compute predicted y by passing x to the model
+    Y_pred = model.forward(A,V)
+    Y_pred = Y_pred.transpose(1,2)
+
+    # Evaluate on train set
+    # f1_score = compute_f1(result, Y)
+    # train_average_score.append(f1_score)
+
+    # Compute and print loss
+    loss = criterion(Y_pred,Y.long())
+    train_losses += loss.item()
+
+    # Zero gradients, perform a backward pass, and update the weights.
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+    
+  train_losses /= (batch_ndx+1)
+  #print("train loss: {}, test loss: {}".format(train_losses,test_losses))
+
+  # Evaluation
+  if t % print_every == print_every-1:
+    print("EPOCHS {}:".format(t+1))
+    model.eval()
+
+
+    print(t+1, losses)
+    
+    test_losses = 0
+    # Turn of autograd
+    with torch.no_grad():
+      # Turn model to evaluation mode
+      test_average_score = []
+      for batch_ndx, sample in enumerate(test_loader):
+
+        A,V,Y = sample
+        # Forward pass: Compute predicted y by passing x to the model
+        Y_pred = model.forward(A,V)
+        result = Y_pred.argmax(-1)
+        
+        # Evaluate on test set
+        f1_score = compute_f1(result, Y)
+        test_average_score.append(f1_score)
+
+        Y_pred = Y_pred.transpose(1,2)
+
+        # Compute and print loss
+        loss = criterion(Y_pred,Y.long())
+        test_losses += loss.item()
+
+      test_losses /= (batch_ndx + 1)
+      print("train loss: {}, test loss: {}".format(train_losses,test_losses))
+      print("Average test score:", np.mean(np.asarray(test_average_score), axis=0))
+```
+
+## 3.4. Demo notebook
 
 Access all necessary data [here](https://drive.google.com/open?id=1v3-ybmhEHxuG44wyskBRw2YJHGifxvh4)
 
