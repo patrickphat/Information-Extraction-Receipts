@@ -269,6 +269,8 @@ all_node_labels = pkl_load("all_node_labels.pkl")
 
 # 4. Explainer
 ```python
+# Import explain funciton
+from explain import explain
 
 # Load pretrained GCN
 GCN = torch.load("GCN_final.pt")
