@@ -268,3 +268,43 @@ all_node_labels = pkl_load("all_node_labels.pkl")
 
 
 # 4. Explainer
+```python
+
+# Load pretrained GCN
+GCN = torch.load("GCN_final.pt")
+
+# Parameters
+IDX = 1
+IMG_PATHS = img_paths_test
+NODE = 1
+LR = 1e-1
+PRINT_EVERY = 50
+EPOCHS = 300
+THRESH = 0.1
+BASE_LINE_THICKNESS = 2
+BASE_BOX_THICKNESS = 2
+
+# Explain GCN result 
+img = explain(model = GCN,
+            A_s = A_s_test,
+            V_s = V_s_test,
+            IMG_PATHS = img_paths_test ,
+            IDX = IDX,
+            NODE = NODE,
+            LR = LR,
+            PRINT_EVERY = PRINT_EVERY,
+            EPOCHS = EPOCHS,
+            THRESH = THRESH,
+            BASE_LINE_THICKNESS = BASE_LINE_THICKNESS,
+            BASE_BOX_THICKNESS = BASE_LINE_THICKNESS)
+```
+In which:
+- `A_s`is a tensor of adjacency tensors shape (m,N,N,L)
+- `V_s`is a tensor of vector features shape (m,N,F)
+- `IDX` is the index of image in the dataset
+- `NODE` is the index of node of that given image
+- `img_paths_test` is a list of path to load images (accordingly to A_s and V_s)
+- `EPOCHS` is number of training epochs for explainer
+- `LR` is number of learning rate for explainer
+- if a probability of an edge >`THRESH`, that thresh is considered to be important
+```
