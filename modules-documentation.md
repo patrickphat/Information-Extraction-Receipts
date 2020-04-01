@@ -266,7 +266,29 @@ all_node_features = pkl_load("all_node_features.pkl")
 all_node_labels = pkl_load("all_node_labels.pkl")
 ```
 
+## 3.3 Train and run demo
 
+Access all necessary data [here](https://drive.google.com/open?id=1v3-ybmhEHxuG44wyskBRw2YJHGifxvh4)
+
+Notebooks for training [here](https://colab.research.google.com/drive/1N9UTbUglxISw2XIePPRXQUohLAsxh47V)
+
+Explanation of notebook:
+
++ Rebuild coor: Load the coordinates to build the adjacency matrix.
+
++ Rebuild nodes: Load the corresponding text containing each bbox(considered as one node)
+
++ Rebuild graph: Build the adjacency matrix from loading coordinates
+
++ Process text, Process all label, Process all labels_per_samples: Preprocess text of each bbox by using token to represent special character(using regular expression)
+
++ BOW, Extracted feature: using bag of words to build feature vector of each node(limited to 768 words)
+
++ Load and train: Load all above preprocessed data for processing in KV
+
++ Padding, Load padded data: Padding to feature, node labels and adjacency matrix with respect to the maximum number of nodes(160 in this case)
+
++ Demo: Run demo from pretrained model which is saved in GCN_final.pt file
 # 4. Explainer
 ```python
 from explain import explain
