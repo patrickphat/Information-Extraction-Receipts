@@ -80,7 +80,7 @@ class Explainer(nn.Module):
         return mask, mask_bias
   
     def forward(self,node_idx):
-        new_A = self.A*self.edge_mask# + self.mask_bias
+        new_A = self.A*self.edge_mask + self.mask_bias
         V = self.model.forward(new_A,self.V)
         return V[0][node_idx]
   
@@ -89,19 +89,22 @@ class Explainer(nn.Module):
         # Turn into 2 probability distribution
         V_true = torch.nn.Softmax()(V_true) + 1e-3
         V_pred = torch.nn.Softmax()(V_pred) + 1e-3
-        # print("V_true",V_true.shape)
-        # print("V_pred",V_pred.shape)
+
 
         # Cross entropy on 2 probability distribution
         pred_loss = -torch.mean(V_true*torch.log(V_pred))
-
+        
+        # Apply sigmoid to force range (0,1)
         mask = torch.sigmoid(self.edge_mask) + 1e-3
-
+        
+        # Entropy loss to measure uncertainty of the mask
         mask_ent = -mask*torch.log(mask) -(1-mask)*torch.log(1-mask)
         mask_ent_loss = self.coeffs["ent_loss"]*torch.mean(mask_ent)
-
+           
+        # Size loss will penalize large masks with lots of edges
         size_loss = self.coeffs["size_loss"] * torch.sum(mask)
-
+        
+        # The ultimate loss is the sum of loss
         loss = pred_loss + mask_ent_loss + size_loss
 
         return loss, pred_loss,mask_ent_loss,size_loss
