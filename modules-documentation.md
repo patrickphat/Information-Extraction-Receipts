@@ -269,8 +269,8 @@ all_node_labels = pkl_load("all_node_labels.pkl")
 
 # 4. Explainer
 ```python
-# Import explain funciton
 from explain import explain
+import matplotlib.pyplot as plt 
 
 # Load pretrained GCN
 GCN = torch.load("GCN_final.pt")
@@ -299,6 +299,9 @@ img = explain(model = GCN,
             THRESH = THRESH,
             BASE_LINE_THICKNESS = BASE_LINE_THICKNESS,
             BASE_BOX_THICKNESS = BASE_LINE_THICKNESS)
+            
+# Show the explaining image            
+plt.imshow(img)
 ```
 In which:
 - `A_s`is a tensor of adjacency tensors shape (m,N,N,L)
